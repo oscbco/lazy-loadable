@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import importedComponent from 'react-imported-component';
 
 export default function LazyLoadable ({ importComponent, isVisible, ...passProps }) {
-  let rendered = useRef(false);
-  let LoadableComp = useRef(false);
+  const rendered = useRef(false);
+  const LoadableComp = useRef(false);
   useEffect(() => {
     LoadableComp.current = importedComponent(importComponent);
     LoadableComp.current.preload();
