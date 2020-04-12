@@ -1,4 +1,3 @@
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
@@ -36,47 +35,6 @@ module.exports = {
             }
           }
         ]
-      }, {
-        test: /\.(scss|css)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              camelCase: true,
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'resolve-url-loader',
-            options: {
-              debug: true
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|svg|gif|jpg|woff|woff2|svg|ttf)$/,
-        exclude: /node_modules/,
-        loaders: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1024,
-              name: 'images/[name].[ext]'
-            }
-          }
-        ]
       }
     ]
   },
@@ -93,10 +51,6 @@ module.exports = {
     }
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css'
-    }),
     new HtmlWebpackPlugin({
       title: '@oscbco/select',
       template: './index.html'
