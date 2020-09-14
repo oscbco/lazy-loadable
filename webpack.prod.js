@@ -1,5 +1,4 @@
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
@@ -30,35 +29,6 @@ module.exports = {
           }], '@babel/preset-react'],
           plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-async-to-generator', '@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-react-jsx-source']
         }
-      }, {
-        test: /\.(scss|css)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: '../'
-            }
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              camelCase: true
-            }
-          },
-          {
-            loader: 'resolve-url-loader',
-            options: {
-              debug: true
-            }
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
       },
       {
         test: /\.(png|svg|gif|jpg|woff|woff2|svg|ttf)$/,
@@ -94,11 +64,9 @@ module.exports = {
     new UglifyJSPlugin({
       sourceMap: false
     }),
-    new MiniCssExtractPlugin({
-      filename: 'build/css/[name].css',
-      chunkFilename: 'build/css/[id].css'
-    }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static'
+    })
   ],
   externals: {
     react: {
