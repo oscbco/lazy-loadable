@@ -1,6 +1,6 @@
 {
   "name": "@oscbco/lazy-loadable",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Wrapper around react-imported-component with lazy initialization",
   "main": "index.js",
   "scripts": {
