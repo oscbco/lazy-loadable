@@ -1,5 +1,4 @@
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
 
@@ -29,19 +28,6 @@ module.exports = {
           }], '@babel/preset-react'],
           plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-async-to-generator', '@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-react-jsx-source']
         }
-      },
-      {
-        test: /\.(png|svg|gif|jpg|woff|woff2|svg|ttf)$/,
-        exclude: /node_modules/,
-        loaders: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1024,
-              name: 'build/images/[name].[ext]'
-            }
-          }
-        ]
       }
     ]
   },
@@ -60,9 +46,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new UglifyJSPlugin({
-      sourceMap: false
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static'

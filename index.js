@@ -1,1 +1,140 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("react"),require("prop-types"),require("react-imported-component")):"function"==typeof define&&define.amd?define(["react","prop-types","react-imported-component"],t):"object"==typeof exports?exports.LazyLoadable=t(require("react"),require("prop-types"),require("react-imported-component")):e.LazyLoadable=t(e.React,e.PropTypes,e.ReactImportedComponent)}(window,function(r,n,o){return c={},u.m=i=[function(e,t,r){e.exports=r(1)},function(e,t,r){"use strict";function i(e){return(i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.default=u;var c=function(e){if(e&&e.__esModule)return e;if(null===e||"object"!==i(e)&&"function"!=typeof e)return{default:e};var t=p();if(t&&t.has(e))return t.get(e);var r,n={},o=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(r in e){var u;Object.prototype.hasOwnProperty.call(e,r)&&((u=o?Object.getOwnPropertyDescriptor(e,r):null)&&(u.get||u.set)?Object.defineProperty(n,r,u):n[r]=e[r])}n.default=e,t&&t.set(e,n);return n}(r(2)),n=o(r(3)),f=o(r(4)),l="/home/darkcode/Projects/libraries/lazy-loadable/source/LazyLoadable/LazyLoadable.js";function o(e){return e&&e.__esModule?e:{default:e}}function p(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return p=function(){return e},e}function a(){return(a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r,n=arguments[t];for(r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e}).apply(this,arguments)}function s(e,t){if(null==e)return{};var r,n=function(e,t){if(null==e)return{};var r,n,o={},u=Object.keys(e);for(n=0;n<u.length;n++)r=u[n],0<=t.indexOf(r)||(o[r]=e[r]);return o}(e,t);if(Object.getOwnPropertySymbols)for(var o=Object.getOwnPropertySymbols(e),u=0;u<o.length;u++)r=o[u],0<=t.indexOf(r)||Object.prototype.propertyIsEnumerable.call(e,r)&&(n[r]=e[r]);return n}function u(e){var t=e.importComponent,r=e.isVisible,n=s(e,["importComponent","isVisible"]),o=(0,c.useRef)(!1),u=(0,c.useRef)(!1);return(0,c.useEffect)(function(){u.current=(0,f.default)(t),u.current.preload()},[]),(o.current||r)&&(o.current=!0),o.current?c.default.createElement(u.current,a({isVisible:r},n,{__source:{fileName:l,lineNumber:18,columnNumber:24}})):c.default.createElement("div",{__source:{fileName:l,lineNumber:18,columnNumber:88}})}u.propTypes={name:n.default.string.isRequired,isVisible:n.default.bool.isRequired}},function(e,t){e.exports=r},function(e,t){e.exports=n},function(e,t){e.exports=o}],u.c=c,u.d=function(e,t,r){u.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},u.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},u.t=function(t,e){if(1&e&&(t=u(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(u.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var n in t)u.d(r,n,function(e){return t[e]}.bind(null,n));return r},u.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return u.d(t,"a",t),t},u.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},u.p="./",u(u.s=0);function u(e){if(c[e])return c[e].exports;var t=c[e]={i:e,l:!1,exports:{}};return i[e].call(t.exports,t,t.exports,u),t.l=!0,t.exports}var i,c});
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("prop-types"), require("react"), require("react-imported-component"));
+	else if(typeof define === 'function' && define.amd)
+		define(["prop-types", "react", "react-imported-component"], factory);
+	else if(typeof exports === 'object')
+		exports["LazyLoadable"] = factory(require("prop-types"), require("react"), require("react-imported-component"));
+	else
+		root["LazyLoadable"] = factory(root["PropTypes"], root["React"], root["ReactImportedComponent"]);
+})(self, function(__WEBPACK_EXTERNAL_MODULE__409__, __WEBPACK_EXTERNAL_MODULE__698__, __WEBPACK_EXTERNAL_MODULE__957__) {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 315:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = LazyLoadable;
+
+var _react = _interopRequireWildcard(__webpack_require__(698));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(409));
+
+var _reactImportedComponent = _interopRequireDefault(__webpack_require__(957));
+
+var _jsxFileName = "/home/darkcode/Projects/libraries/lazy-loadable/source/LazyLoadable/LazyLoadable.js";
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function LazyLoadable(_ref) {
+  var importComponent = _ref.importComponent,
+      isVisible = _ref.isVisible,
+      passProps = _objectWithoutProperties(_ref, ["importComponent", "isVisible"]);
+
+  var rendered = (0, _react.useRef)(false);
+  var LoadableComp = (0, _react.useRef)(false);
+  (0, _react.useEffect)(function () {
+    LoadableComp.current = (0, _reactImportedComponent["default"])(importComponent);
+    LoadableComp.current.preload();
+  }, []);
+
+  if (rendered.current || isVisible) {
+    rendered.current = true;
+  }
+
+  return rendered.current ? /*#__PURE__*/_react["default"].createElement(LoadableComp.current, _extends({
+    isVisible: isVisible
+  }, passProps, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 24
+    }
+  })) : /*#__PURE__*/_react["default"].createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 88
+    }
+  });
+}
+
+LazyLoadable.propTypes = {
+  name: _propTypes["default"].string.isRequired,
+  isVisible: _propTypes["default"].bool.isRequired
+};
+
+/***/ }),
+
+/***/ 409:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__409__;
+
+/***/ }),
+
+/***/ 698:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__698__;
+
+/***/ }),
+
+/***/ 957:
+/***/ ((module) => {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__957__;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(315);
+/******/ })()
+;
+});
